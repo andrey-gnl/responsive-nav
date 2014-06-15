@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Navi</title>
+	<link rel="stylesheet" href="styles/header.css">
+	<link rel="stylesheet" href="styles/normalize.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript">
+$(document).ready(function(){
+	 $('.txt').focus(
+        function(){	   
+	        $('.change').css('background-color','#29b563');
+    });
+    $('.txt').blur(
+        function(){	   
+	        $('.change').css('background-color','#3ED37C');
+    });
+});
+
+$(document).ready(function(){ var i = 0;
+	 $('img[alt="mouse"]').click(
+        function(){
+        	$('.change').css('background-color','#29b563');  
+	        $('section.search').show();
+	        i++;
+	        if(i%2!=1) {
+	        	$('section.search').hide();
+	        	$('.change').css('background-color','#3ED37C');
+
+	        }
+    });
+    
+});
+
+</script>
+</head>
+<body>
+	<nav name="topmenu">
+
+		<div class="menu">
+
+			<ul>
+				<li><section class="monitor"> <a href= <?= $userData['id'] ?> >My Page</a></section>
+				<section class="mobile">
+					<a href="#"><img src="img/my.png" alt="durov"></a>
+				</section>
+				</li>
+				<li><section class="monitor"> <a href= "index.php/friends" >Friends</a></section>
+				<section class="mobile">
+					<a href="#"><img src="img/frn (2).png" alt=""></a>
+				</section> 
+				</li>
+				<li><section class="monitor"><a href= "index.php/im">Messages</a></section>
+				<section class="mobile"> 
+					<a href="#"><img src="img/msg (2).png" alt=""></a>
+				</section>
+				</li>
+				<li> <section class="monitor"><a href= "index.php/logout">Logout</a> </section>
+				<section class="mobile">
+					<a href="#"><img src="img/out (2).png" alt=""></a>
+				</section>
+				</li>
+				<li class="change">
+					<section class="monitor">
+					<form method="GET"> <span>
+						<input type='text' name='searchUserField' placeholder='Enter user name or surname' class="txt">
+						<input type='submit' name='searchUserButton' value='&nbsp;' class="sub"></span>
+					</form>
+					</section>
+					<section data-name="px">
+						<img src="img/sch.png" alt="mouse">
+					
+					</section>
+				</li>
+			</ul>
+				<section class="search">
+							<span>
+						<input type='text' name='searchUserField' placeholder='Enter user name or surname' class="txt">
+						<input type='submit' name='searchUserButton' value='&nbsp;' class="sub"></span>
+				</section>
+		</div>
+	</nav>
+</body>
+</html>
